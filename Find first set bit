@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+unsigned int getFirstSetBit(int n) {
+    if (n == 0)
+        return 0;
+
+    int position = 1;
+
+    // Find the first set bit
+    while ((n & 1) == 0) {
+        n = n >> 1;
+        position++;
+    }
+
+    return position;
+}
+
+int main() {
+    int N1 = 18;
+    cout << "First set bit position for N1: " << getFirstSetBit(N1) << endl;
+
+    int N2 = 12;
+    cout << "First set bit position for N2: " << getFirstSetBit(N2) << endl;
+
+    return 0;
+}
